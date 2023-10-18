@@ -1,0 +1,4 @@
+/home/wilsonsue/work/programming101/templates/template-c/build/CMakeFiles/main.dir
+/home/wilsonsue/work/programming101/templates/template-c/build/CMakeFiles/format.dir
+/home/wilsonsue/work/programming101/templates/template-c/build/CMakeFiles/edit_cache.dir
+/home/wilsonsue/work/programming101/templates/template-c/build/CMakeFiles/rebuild_cache.dir

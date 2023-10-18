@@ -1,0 +1,22 @@
+COMPILATION_FLAGS=-std=c18 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -D_DEFAULT_SOURCE -D_DARWIN_C_SOURCE -D_GNU_SOURCE -D__BSD_VISIBLE -Werror
+SUPPORTED_FLAGS=
+SUPPORTED_SANITIZER_FLAGS=
+LIBRARIES=
+PROGRAMS=
+server: server.c
+	$(CC) $(COMPILATION_FLAGS) $(CFLAGS) $(SUPPORTED_FLAGS) $(SUPPORTED_SANITIZER_FLAGS) -o server server.c $(LIBRARIES)
+PROGRAMS += server
+server-traceable: server.c
+	$(CC) $(COMPILATION_FLAGS) $(CFLAGS) $(SUPPORTED_FLAGS) -o server-traceable server.c $(LIBRARIES)
+PROGRAMS += server-traceable
+client: client.c
+	$(CC) $(COMPILATION_FLAGS) $(CFLAGS) $(SUPPORTED_FLAGS) $(SUPPORTED_SANITIZER_FLAGS) -o client client.c $(LIBRARIES)
+PROGRAMS += client
+client-traceable: client.c
+	$(CC) $(COMPILATION_FLAGS) $(CFLAGS) $(SUPPORTED_FLAGS) -o client-traceable client.c $(LIBRARIES)
+PROGRAMS += client-traceable
+
+clean:
+	rm -f $(PROGRAMS) $(LIBS)
+
+all: $(PROGRAMS) $(LIBS)
